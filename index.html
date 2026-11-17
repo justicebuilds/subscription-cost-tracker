@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subscription Tracker</title>
-  </head>
+
+</head>
 
 <body>
   <header>
@@ -12,27 +13,47 @@
   </header>
 
   <main>
+
     <section>
       <h2>Subscriptions</h2>
 
-      <p>Disney+: $14 a month / $168 a year</p>
-      <p>Netflix: $10 a month / $120 a year</p>
-      <p>Amazon Prime: $16 a month / $192 a year</p>
-      <p>Blink: $13 a month / $156 a year</p>
-      <p>Hulu: $13 a month / $156 a year</p>
-      <p>Peacock: $9 a month / $108 a year</p>
+      <div id="subscription-list"></div>
     </section>
-    <section>
- <details>
-    <summary>Show Monthly and Yearly Totals</summary>
 
-    <p>Monthly total of all subscriptions: $75</p>
-    <p>Yearly total of all subscriptions: $900</p>
-  </details>
+    <section>
+      <h2>Add a Subscription</h2>
+
+      <form id="subscription-form">
+
+        <p>
+          <label for="subscription-name">Subscription Name:</label>
+          <input type="text" id="subscription-name" required>
+        </p>
+
+        <p>
+          <label for="subscription-cost">Monthly Cost:</label>
+          <input type="number" id="subscription-cost"
+                 min="0.01" step="0.01" required>
+        </p>
+
+        <button type="submit">Add Subscription</button>
+
+      </form>
     </section>
-    
+
+    <section>
+      <details>
+        <summary>Show Monthly and Yearly Totals</summary>
+
+        <p id="monthly-total"></p>
+        <p id="yearly-total"></p>
+
+      </details>
+    </section>
+
   </main>
 
   <script src="./script.js"></script>
 </body>
 </html>
+
