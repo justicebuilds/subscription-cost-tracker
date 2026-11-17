@@ -51,3 +51,8 @@ document.getElementById("subscription-form").addEventListener("submit", function
 
   document.getElementById("subscription-form").reset();
 });
+
+document.getElementById("clear-button").addEventListener("click", function() {
+  subscriptions.length = 0;
+  showSubscriptions();
+});
