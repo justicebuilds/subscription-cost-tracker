@@ -9,7 +9,7 @@ I have way too many subscriptions to keep track of and I'm not even sure how muc
 
 You need nothing installed.
 
-1. Open the [live page]([your live address, which you add after turning on GitHub Pages]).
+1. Open the [Subscription Tracker]([(https://justicebuilds.github.io/subscription-cost-tracker/)]).
 2. The page displays a list of subscriptions with their monthly and yearly costs, followed by the combined totals.
 
 Or click "Code", then "Download ZIP", unzip the folder, and open `index.html` in your browser.
@@ -33,15 +33,15 @@ Yearly total of all subscriptions: $900
 - Written in JavaScript, HTML and CSS, first as a pen on CodePen, then kept here and published with GitHub Pages.
 - The data uses rounded monthly subscription costs.
 - I decided to calculate what each subscription was also costing me each year, which helps me decide if i should cancel something.
-- AI use: My Code Coach suggested changes to formatting, changing let yearlyCost to const yearlyCost, and using exact decimal amounts. I accepted the const suggestion because the value does not change. I rejected the formatting changes because they did not affect how my code runs, and I chose rounded dollar amounts to keep the project simple.
+- AI use: My Code Coach suggested changes to formatting, changing let yearlyCost to const yearlyCost, and using exact decimal amounts. I accepted the const suggestion because the value does not change so const made more sense. I rejected the formatting changes because they did not affect how my code runs, and I chose rounded dollar amounts to keep the project simple.
 
 ## What I would change next
 
-- If I had more time, I would add a way for others to input their own subscriptions or bills to see what they're spending. I would also add a way to easily delete them.
+- If I had more time, I would find a way so that when you refresh you don't have to start over, your info stays. I would also work around the layout a bit and place things differently on the screen.
 
 ## Files
 
 - `index.html`: the page, which loads `style.css` and `script.js`
-- `style.css`: [what it styles]
-- `script.js`: [what it holds and does]
+- `style.css`: This makes the background purple, with headings light purple & font white.
+- `script.js`: This does my subscription/bill math, as well as allows me to add anything and clear it out.
 - `plan.md`: my capstone plan from the course
