@@ -1,3 +1,4 @@
+
 const subscriptions = [
   { name: "Disney+", monthlyCost: 14 },
   { name: "Netflix", monthlyCost: 10 },
@@ -7,25 +8,46 @@ const subscriptions = [
   { name: "Peacock", monthlyCost: 9 }
 ];
 
-let monthlyTotal = 0;
-let yearlyTotal = 0;
-
 function calculateYearlyCost(monthlyCost) {
   return monthlyCost * 12;
 }
 
-for (const subscription of subscriptions) {
-  monthlyTotal = monthlyTotal + subscription.monthlyCost;
+function showSubscriptions() {
+  let monthlyTotal = 0;
+  let list = "";
 
-   let yearlyCost = calculateYearlyCost(subscription.monthlyCost);
+  for (const subscription of subscriptions) {
+    monthlyTotal = monthlyTotal + subscription.monthlyCost;
 
-  console.log(`${subscription.name}: $${subscription.monthlyCost} a month / $${yearlyCost} a year`);
+    let yearlyCost = calculateYearlyCost(subscription.monthlyCost);
+
+    list = list + `<p>${subscription.name}: $${subscription.monthlyCost.toFixed(2)} a month / $${yearlyCost.toFixed(2)} a year</p>`;
+  }
+
+  document.getElementById("subscription-list").innerHTML = list;
+
+  document.getElementById("monthly-total").textContent =
+    "Monthly total of all subscriptions: $" + monthlyTotal.toFixed(2);
+
+  document.getElementById("yearly-total").textContent =
+    "Yearly total of all subscriptions: $" + calculateYearlyCost(monthlyTotal).toFixed(2);
 }
 
+showSubscriptions();
 
-yearlyTotal = monthlyTotal * 12;
+document.getElementById("subscription-form").addEventListener("submit", function(event) {
+  event.preventDefault();
 
+  let name = document.getElementById("subscription-name").value.trim();
+  let cost = Number(document.getElementById("subscription-cost").value);
 
-console.log("Monthly total of all subscriptions: $" + monthlyTotal);
+  if (name === "" || cost <= 0) {
+    return;
+  }
 
-console.log("Yearly total of all subscriptions: $" + yearlyTotal);
+  subscriptions.push({ name: name, monthlyCost: cost });
+
+  showSubscriptions();
+
+  document.getElementById("subscription-form").reset();
+});
