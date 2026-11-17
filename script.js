@@ -1,8 +1,24 @@
-FOR EACH subscription in the list
-PRINT the name and monthly cost
-ADD the monthly cost to the monthly total
-MULTIPLY the monthly cost by 12
-PRINT the yearly cost of each subscription
-MULTIPLY the monthly total by 12 for yearly total of all subscriptions combined
-PRINT the monthly total of all subscriptions
-PRINT the yearly total of all subscriptions
+const subscriptions = [
+  { name: "Disney+", cost: 14 },
+  { name: "Netflix", cost: 10 },
+  { name: "Amazon Prime", cost: 16 },
+  { name: "Blink", cost: 13 },
+  { name: "Hulu", cost: 13 },
+  { name: "Peacock", cost: 9 }
+];
+
+let monthlyTotal = 0;
+let yearlyTotal = 0;
+
+for (const subscription of subscriptions) {
+  monthlyTotal = monthlyTotal + subscription.cost;
+
+  let yearlyCost = subscription.cost * 12;
+
+  console.log(`${subscription.name}: $${subscription.cost} a month / $${yearlyCost} a year`);
+}
+
+yearlyTotal = monthlyTotal * 12;
+
+console.log("Monthly total of all subscriptions: $" + monthlyTotal);
+console.log("Yearly total of all subscriptions: $" + yearlyTotal);
