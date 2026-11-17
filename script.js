@@ -10,15 +10,21 @@ const subscriptions = [
 let monthlyTotal = 0;
 let yearlyTotal = 0;
 
+function calculateYearlyCost(monthlyCost) {
+  return monthlyCost * 12;
+}
+
 for (const subscription of subscriptions) {
   monthlyTotal = monthlyTotal + subscription.monthlyCost;
 
-   const yearlyCost = subscription.monthlyCost * 12;
+   let yearlyCost = calculateYearlyCost(subscription.monthlyCost);
 
   console.log(`${subscription.name}: $${subscription.monthlyCost} a month / $${yearlyCost} a year`);
 }
 
+
 yearlyTotal = monthlyTotal * 12;
+
 
 console.log("Monthly total of all subscriptions: $" + monthlyTotal);
 
