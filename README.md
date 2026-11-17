@@ -33,7 +33,7 @@ Yearly total of all subscriptions: $900
 - Written in JavaScript, HTML and CSS, first as a pen on CodePen, then kept here and published with GitHub Pages.
 - The data uses rounded monthly subscription costs.
 - I decided to calculate what each subscription was also costing me each year, which helps me decide if i should cancel something.
-- AI use: My Code Coach suggested changes to formatting, changing let yearlyCost to const yearlyCost, and using exact decimal amounts. I accepted the const suggestion because the value does not change so const made more sense. I rejected the formatting changes because they did not affect how my code runs, and I chose rounded dollar amounts to keep the project simple.
+- AI use: My Code Coach suggested changes to formatting, changing let yearlyCost to const yearlyCost, and using exact decimal amounts. I accepted the const suggestion because the value does not change so const made more sense. I rejected the formatting changes because they did not affect how my code runs. I chose rounded dollar amounts to keep the project simple, but did add the decimal option for other users to add their accurate prices.
 
 ## What I would change next
 
